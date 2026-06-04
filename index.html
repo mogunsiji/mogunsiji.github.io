@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Muritala Ogunsiji — Economist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:       #0B2545;
+    --navy-mid:   #1A3A6B;
+    --amber:      #E07B00;
+    --amber-light:#F5A623;
+    --amber-pale: #FFF8EE;
+    --teal:       #007A6E;
+    --teal-light: #E0F5F3;
+    --ink:        #111827;
+    --ink-soft:   #374151;
+    --muted:      #6B7280;
+    --border:     #D1D5DB;
+    --surface:    #F3F4F6;
+    --white:      #FFFFFF;
+    /* card accent palette */
+    --c1: #0B2545; --c1l: #EDF2FB;
+    --c2: #007A6E; --c2l: #E0F5F3;
+    --c3: #E07B00; --c3l: #FFF3E0;
+    --c4: #6B21A8; --c4l: #F5F0FF;
+    --c5: #B91C1C; --c5l: #FEF2F2;
+    --c6: #065F46; --c6l: #ECFDF5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--surface);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 60px;
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--amber); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E07B00' stroke-width='0.3' opacity='0.15'%3E%3Cpath d='M30 2 L58 30 L30 58 L2 30 Z'/%3E%3Ccircle cx='30' cy='30' r='15'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    pointer-events: none; z-index: 0;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    position: relative; z-index: 1;
+  }
+  .hero-label {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 1.5rem; font-weight: 400;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 500; line-height: 1.1;
+    color: var(--ink); margin-bottom: 0.3rem;
+  }
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-style: italic;
+    color: var(--muted); margin-bottom: 0.6rem;
+  }
+  .degree-notice {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--teal-light);
+    border: 1px solid #a8d0c8;
+    border-radius: 2px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.75rem; letter-spacing: 0.06em;
+    color: var(--teal); margin-bottom: 1.75rem;
+    line-height: 1.4;
+  }
+  .degree-notice-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--teal); flex-shrink: 0;
+  }
+  .hero-desc {
+    font-size: 0.95rem; color: var(--ink-soft);
+    max-width: 420px; line-height: 1.8; margin-bottom: 2.5rem;
+  }
+  .hero-fields {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem;
+  }
+  .field-tag {
+    font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 2px; font-weight: 400;
+  }
+  .field-tag:nth-child(1) { background: var(--c1l); border: 1px solid var(--c1); color: var(--c1); }
+  .field-tag:nth-child(2) { background: var(--c2l); border: 1px solid var(--c2); color: var(--c2); }
+  .field-tag:nth-child(3) { background: var(--c3l); border: 1px solid var(--c3); color: var(--c3); }
+  .field-tag:nth-child(4) { background: var(--c4l); border: 1px solid var(--c4); color: var(--c4); }
+  .hero-cta {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block; font-size: 0.78rem; letter-spacing: 0.12em;
+    text-transform: uppercase; font-weight: 400; text-decoration: none;
+    padding: 0.75rem 2rem; border-radius: 2px; transition: all 0.25s;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--amber); color: var(--white);
+    border: 1px solid var(--amber);
+  }
+  .btn-primary:hover { background: var(--amber-light); border-color: var(--amber-light); }
+  .btn-outline {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--border);
+  }
+  .btn-outline:hover { border-color: var(--amber); color: var(--amber); }
+
+  .hero-right {
+    background: var(--navy);
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 4rem;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border: 80px solid rgba(224,123,0,0.15);
+    border-radius: 50%;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute; bottom: 40px; left: -40px;
+    width: 200px; height: 200px;
+    border: 40px solid rgba(224,123,0,0.10);
+    border-radius: 50%;
+  }
+  .hero-stats {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 600;
+    color: var(--amber-light); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-top: 0.4rem;
+  }
+  .hero-quote {
+    position: relative; z-index: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic;
+    color: rgba(255,255,255,0.6);
+    border-left: 2px solid var(--amber);
+    padding-left: 1.25rem;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 6rem 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  .section-label {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.75rem; font-weight: 400;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 500; color: var(--ink);
+    margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .section-divider {
+    width: 48px; height: 2px;
+    background: var(--amber);
+    margin: 1.5rem 0 3rem;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 5rem; align-items: start; }
+  .about-text p { color: var(--ink-soft); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.25rem; }
+  .about-text p:last-child { margin-bottom: 0; }
+  .about-sidebar {}
+  .info-block { margin-bottom: 2rem; }
+  .info-block h4 {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.75rem; font-weight: 400;
+  }
+  .info-block p, .info-block a {
+    font-size: 0.9rem; color: var(--ink-soft);
+    text-decoration: none; display: block; line-height: 1.6;
+  }
+  .info-block a:hover { color: var(--amber); }
+  .verified-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.72rem; letter-spacing: 0.08em;
+    color: var(--teal); margin-top: 0.5rem;
+  }
+  .verified-badge::before { content: '✓'; font-weight: 500; }
+
+  /* ─── RESEARCH ─── */
+  #research { background: var(--surface); }
+  .research-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .paper-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--amber);
+    padding: 1.5rem;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+  .paper-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.09); }
+  .paper-card:nth-child(1) { border-left-color: var(--c1); background: var(--c1l); }
+  .paper-card:nth-child(2) { border-left-color: var(--c2); background: var(--c2l); }
+  .paper-card:nth-child(3) { border-left-color: var(--c3); background: var(--c3l); }
+  .paper-card:nth-child(4) { border-left-color: var(--c4); background: var(--c4l); }
+  .paper-card:nth-child(5) { border-left-color: var(--c5); background: var(--c5l); }
+  .paper-card:nth-child(6) { border-left-color: var(--c6); background: var(--c6l); }
+  .paper-status {
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500; margin-bottom: 0.75rem;
+  }
+  .status-published { color: var(--teal); }
+  .status-working { color: var(--amber); }
+  .paper-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 500;
+    color: var(--ink); line-height: 1.4; margin-bottom: 0.6rem;
+  }
+  .paper-journal { font-size: 0.8rem; color: var(--muted); font-style: italic; margin-bottom: 0.5rem; }
+  .paper-coauthors { font-size: 0.78rem; color: var(--muted); }
+  .working-papers { margin-top: 2.5rem; }
+  .working-papers h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 500;
+    color: var(--ink); margin-bottom: 1.5rem;
+  }
+  .wp-item {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--border);
+    border-left: 3px solid transparent;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: border-left-color 0.2s, background 0.2s;
+    margin-left: -1rem; padding-left: 1rem;
+  }
+  .wp-item:first-child { border-top: 1px solid var(--border); }
+  .wp-item:nth-child(1) { border-left-color: var(--c1); }
+  .wp-item:nth-child(2) { border-left-color: var(--c2); }
+  .wp-item:nth-child(3) { border-left-color: var(--c3); }
+  .wp-item:hover { background: var(--surface); }
+  .wp-icon { color: var(--amber); font-size: 1.1rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .wp-title { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ─── TEACHING ─── */
+  #teaching { background: var(--white); }
+  .teaching-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .teaching-card {
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    position: relative; overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .teaching-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .teaching-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .teaching-card:nth-child(1)::before { background: linear-gradient(90deg, var(--navy), var(--navy-mid)); }
+  .teaching-card:nth-child(2)::before { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
+  .teaching-card:nth-child(3)::before { background: linear-gradient(90deg, var(--teal), #26C6A0); }
+  .tc-inst {
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--amber); margin-bottom: 0.4rem;
+  }
+  .tc-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 500; color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+  .tc-period { font-size: 0.8rem; color: var(--muted); margin-bottom: 1rem; }
+  .course-list { list-style: none; }
+  .course-list li {
+    font-size: 0.82rem; color: var(--ink-soft); padding: 0.3rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+  .course-list li:last-child { border-bottom: none; }
+  .course-list li::before { content: '›'; color: var(--amber); font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .course-highlight { color: var(--teal) !important; font-weight: 400; }
+
+  /* ─── AWARDS ─── */
+  #awards { background: var(--navy); }
+  #awards h2 { color: var(--white); }
+  #awards .section-label { color: var(--amber-light); }
+  .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,0.08); }
+  .award-item {
+    background: var(--ink);
+    padding: 2rem 1.5rem;
+    transition: background 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .award-item:hover { background: #1A3A6B; transform: translateY(-2px); }
+  .award-item::after {
+    content: '★';
+    position: absolute; top: 1rem; right: 1rem;
+    font-size: 0.7rem; color: rgba(224,123,0,0.3);
+  }
+  .award-year { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--amber); margin-bottom: 0.5rem; }
+  .award-name { font-size: 0.9rem; color: rgba(255,255,255,0.85); line-height: 1.5; }
+  .award-org { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 0.4rem; }
+
+  /* ─── SERVICE ─── */
+  #service { background: var(--surface); }
+  .service-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .service-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem; font-weight: 500;
+    color: var(--ink); margin-bottom: 1.5rem;
+  }
+  .service-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item strong {
+    display: block; color: var(--ink); font-weight: 400;
+    font-size: 0.88rem; margin-bottom: 0.15rem;
+  }
+  .service-item span { color: var(--muted); font-size: 0.8rem; }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--amber-pale); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .contact-text { font-size: 0.95rem; color: var(--ink-soft); line-height: 1.85; }
+  .contact-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem 0; border-bottom: 1px solid var(--border);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .ci-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); width: 80px; flex-shrink: 0; margin-top: 0.15rem; }
+  .ci-val { font-size: 0.9rem; color: var(--ink-soft); }
+  .ci-val a { color: var(--teal); text-decoration: none; }
+  .ci-val a:hover { color: var(--amber); }
+
+  /* ─── VERIFICATION BANNER ─── */
+  .verification-banner {
+    background: var(--navy);
+    padding: 1rem 3rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .verification-banner p {
+    color: rgba(255,255,255,0.9); font-size: 0.82rem; letter-spacing: 0.04em;
+    text-align: center;
+  }
+  .verification-banner strong { color: #ffffff; font-weight: 500; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--navy); color: rgba(255,255,255,0.35);
+    text-align: center; padding: 2.5rem;
+    font-size: 0.78rem; letter-spacing: 0.06em;
+  }
+  footer strong { color: rgba(255,255,255,0.55); font-weight: 400; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.25rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 300px; }
+    .hero-left { padding: 3rem 2rem; }
+    .about-grid, .research-layout, .teaching-grid,
+    .awards-grid, .service-cols, .contact-layout { grid-template-columns: 1fr; }
+    .container { padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .hero-stats { grid-template-columns: repeat(4, 1fr); }
+    .verification-banner { padding: 1rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-name">Dr. Muritala O. Ogunsiji</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-label">Economist · Scholar · Educator</p>
+    <h1>Dr. Muritala<br>Ogunsiji</h1>
+    <p class="hero-subtitle">Ph.D. in Economics, Northern Illinois University</p>
+    <p class="hero-desc">
+      Researcher specialising in Public Finance and Urban Economics with expertise in spatial econometrics, panel data methods, and quantitative policy analysis.
+    </p>
+    <div class="hero-fields">
+      <span class="field-tag">Public Finance</span>
+      <span class="field-tag">Applied Econometrics</span>
+      <span class="field-tag">Urban Economics</span>
+      <span class="field-tag">Health Economics</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#research" class="btn btn-primary">View Research</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <p class="hero-quote">
+      "Rigorous empirical inquiry in service of evidence-based policy — bridging the gap between academic research and real-world outcomes."
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Peer-reviewed<br>Publications</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Working<br>Papers</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Awards &amp;<br>Scholarships</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years<br>Teaching</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEGREE VERIFICATION BANNER removed -->
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">Background</p>
+    <h2>About</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am an economist specialising in <strong>Public Finance</strong>, <strong>Urban Economics</strong>, and <strong>Health Economics</strong>. My research uses modern applied econometric methods to evaluate the effects of public policies on crime and health outcomes. A central focus of my work is generating policy-relevant evidence through credible causal inference strategies. I completed all requirements for the Ph.D. in Economics at Northern Illinois University in May 2026, successfully defending my dissertation, <em>Three Essays in Public Finance and Urban Economics</em>.</p>
+        <p>In addition to my research, I am a dedicated educator with extensive teaching experience across diverse educational settings in both Nigeria and the United States. My experience spans undergraduate instruction in economics as well as nearly a decade of secondary school teaching. These experiences have strengthened my ability to engage students with varying academic backgrounds, learning styles, and career aspirations. I strive to create an inclusive and intellectually stimulating learning environment that promotes critical thinking, analytical reasoning, and lifelong learning.</p>
+        <p>Through my research and teaching, I seek to contribute to evidence-based policymaking, advance scholarly understanding of pressing socioeconomic issues, and help students develop the skills necessary to succeed in an increasingly data-driven world.</p>
+        <p>Outside academia, I have been actively involved in Islamic education and community service, including teaching Qur'an and mentoring students in religious studies. These experiences have strengthened my commitment to education, mentorship, and lifelong learning.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="info-block">
+          <h4>Doctoral Qualification</h4>
+          <p>Ph.D. Economics</p>
+          <p>Northern Illinois University, USA</p>
+          <p style="margin-top:0.3rem;font-size:0.82rem;color:var(--muted);">Requirements completed: May 2026</p>
+          <p style="font-size:0.82rem;color:var(--muted);">Degree conferred: August 2026</p>
+        </div>
+        <div class="info-block">
+          <h4>Other Degrees</h4>
+          <p>MS Statistics — NIU, 2025</p>
+          <p>MA Economics — NIU, 2024</p>
+          <p>MSc Economics — Univ. of Ilorin, 2016</p>
+          <p>BSc Economics — Univ. of Ilorin, 2010</p>
+        </div>
+        <div class="info-block">
+          <h4>Primary Fields</h4>
+          <p>Public Finance</p>
+          <p>Urban Economics</p>
+        </div>
+        <div class="info-block">
+          <h4>Secondary Fields</h4>
+          <p>Applied Econometrics</p>
+          <p>Health Economics</p>
+        </div>
+        <div class="info-block">
+          <h4>Software</h4>
+          <p>R · Stata · Python · LaTeX</p>
+        </div>
+        <div class="info-block">
+          <h4>Contact</h4>
+          <a href="mailto:murtadaogunsiji@gmail.com">murtadaogunsiji@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="container">
+    <p class="section-label">Scholarship</p>
+    <h2>Research</h2>
+    <div class="section-divider"></div>
+
+    <div class="research-layout">
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2024</div>
+        <div class="paper-title">Exchange Rate, External Reserves, and Current Account Balance Nexus in Oil-Dependent Countries</div>
+        <div class="paper-journal">Ilorin Journal of Economic Policy, 11(1), 1–17</div>
+        <div class="paper-coauthors">with T. F. Oloko</div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2021</div>
+        <div class="paper-title">Geopolitical Risk and the Return Volatility of Islamic Stocks in Indonesia and Malaysia: A GARCH-MIDAS Approach</div>
+        <div class="paper-journal">Asian Economics Letters, 2(3)</div>
+        <div class="paper-coauthors">with U. B. Ndako &amp; A. A. Salisu</div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2021</div>
+        <div class="paper-title">Econometric Analysis of the Dutch Disease Implication of China–Africa Trade</div>
+        <div class="paper-journal">Quarterly Journal of Econometrics Research, 7(1), 13–30</div>
+        <div class="paper-coauthors">with T. F. Oloko &amp; M. A. Adeleke</div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2021</div>
+        <div class="paper-title">Twin Deficit Hypothesis and Macroeconomic Fundamentals: New Evidence from Nigeria</div>
+        <div class="paper-journal">Quarterly Journal of Econometrics Research, 7(1), 1–12</div>
+        <div class="paper-coauthors">with T. O. Ayinde &amp; K. O. Ibikunle</div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2017</div>
+        <div class="paper-title">Sustainability of Fiscal Deficit in Nigeria: A Cointegration Analysis with Structural Break</div>
+        <div class="paper-journal">Lafia Journal of Economics and Management Sciences, 2(2), 252–268</div>
+        <div class="paper-coauthors">with D. A. Mustafa</div>
+      </div>
+      <div class="paper-card">
+        <div class="paper-status status-published">Published · 2016</div>
+        <div class="paper-title">Analysis of the Impact of Governance on Social Services in Selected African Countries</div>
+        <div class="paper-journal">Journal of Arid Zone Economy, 12(3), 60–77</div>
+        <div class="paper-coauthors">with D. A. Mustafa</div>
+      </div>
+    </div>
+
+    <div class="working-papers">
+      <h3>Working Papers &amp; Dissertation Chapters</h3>
+      <div class="wp-item">
+        <div class="wp-icon">◆</div>
+        <div class="wp-title">Impact of Housing Choice Voucher on Crime: A Spatial Econometric Analysis
+          <br><span style="font-size:0.8rem;color:#6B7280;">Presented at ASSA 2026 Annual Meeting</span></div>
+      </div>
+      <div class="wp-item">
+        <div class="wp-icon">◆</div>
+        <div class="wp-title">Heterogeneous Impact of Public Health Expenditure on Health Outcomes in Developing and Emerging Economies
+          <br><span style="font-size:0.8rem;color:#6B7280;">Presented at IEA 2025 Annual Meeting</span></div>
+      </div>
+      <div class="wp-item">
+        <div class="wp-icon">◆</div>
+        <div class="wp-title">Corporate Homeownership and Crime: Evidence from St. Louis County
+          <br><span style="font-size:0.8rem;color:#6B7280;">Presented at NIU ECONference 2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="container">
+    <p class="section-label">Education &amp; Pedagogy</p>
+    <h2>Teaching Experience</h2>
+    <div class="section-divider"></div>
+    <div class="teaching-grid">
+      <div class="teaching-card">
+        <div class="tc-inst">Fountain University, Nigeria</div>
+        <div class="tc-role">Lecturer</div>
+        <div class="tc-period">May 2020 – Present</div>
+        <ul class="course-list">
+          <li>Introduction to Microeconomics</li>
+          <li>Introductory Econometrics (ECO 307 &amp; 308)</li>
+          <li>Public Sector Economics / Public Policy (ECO 315 &amp; 407)</li>
+          <li class="course-highlight">Islamic Finance (ECO 318)</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
+        <div class="tc-inst">Northern Illinois University</div>
+        <div class="tc-role">Teaching Assistant</div>
+        <div class="tc-period">Aug 2021 – May 2026 · USA</div>
+        <ul class="course-list">
+          <li>Principles of Microeconomics (ECON 260)</li>
+          <li>Intermediate Microeconomics (ECON 360)</li>
+          <li>Industrial Economics (ECON 375)</li>
+          <li>Economic Statistics &amp; Econometrics (ECON 590)</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
+        <div class="tc-inst">Al-Hijrah College, Nigeria</div>
+        <div class="tc-role">Learning Facilitator</div>
+        <div class="tc-period">2011 – 2020</div>
+        <ul class="course-list">
+          <li>Economics (A-level)</li>
+          <li>Marketing</li>
+          <li>Mathematics (secondary)</li>
+        </ul>
+        <p style="font-size:0.78rem;color:var(--teal);margin-top:0.75rem;">100% pass rate in WAEC/NECO examinations</p>
+      </div>
+    </div>
+
+    <!-- Education timeline -->
+    <div style="margin-top:4rem;">
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--ink);margin-bottom:2rem;">Academic Formation</h3>
+      <div style="position:relative;">
+        <div style="position:absolute;left:7px;top:12px;bottom:12px;width:1px;background:var(--border);"></div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;align-items:flex-start;">
+            <div style="width:15px;height:15px;border-radius:50%;border:2px solid var(--amber);background:var(--white);flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);">2026</div>
+              <div style="font-size:0.95rem;color:var(--ink);margin-top:0.2rem;">Ph.D. Economics — Northern Illinois University, USA</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;align-items:flex-start;">
+            <div style="width:15px;height:15px;border-radius:50%;border:2px solid var(--amber);background:var(--white);flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);">2025</div>
+              <div style="font-size:0.95rem;color:var(--ink);margin-top:0.2rem;">MS Statistics — Northern Illinois University, USA</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;align-items:flex-start;">
+            <div style="width:15px;height:15px;border-radius:50%;border:2px solid var(--border);background:var(--white);flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">2024</div>
+              <div style="font-size:0.95rem;color:var(--ink-soft);margin-top:0.2rem;">MA Economics — Northern Illinois University, USA</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;align-items:flex-start;">
+            <div style="width:15px;height:15px;border-radius:50%;border:2px solid var(--border);background:var(--white);flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">2016</div>
+              <div style="font-size:0.95rem;color:var(--ink-soft);margin-top:0.2rem;">MSc Economics — University of Ilorin, Nigeria</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:1.5rem;padding:1rem 0;align-items:flex-start;">
+            <div style="width:15px;height:15px;border-radius:50%;border:2px solid var(--border);background:var(--white);flex-shrink:0;margin-top:3px;"></div>
+            <div>
+              <div style="font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);">2010</div>
+              <div style="font-size:0.95rem;color:var(--ink-soft);margin-top:0.2rem;">BSc Economics — University of Ilorin, Nigeria</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="container">
+    <p class="section-label">Recognition</p>
+    <h2>Awards &amp; Scholarships</h2>
+    <div style="width:48px;height:2px;background:var(--amber);margin:1.5rem 0 3rem;"></div>
+    <div class="awards-grid">
+      <div class="award-item">
+        <div class="award-year">2026</div>
+        <div class="award-name">Outstanding Graduate Scholar Award</div>
+        <div class="award-org">Department of Economics, NIU</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2026</div>
+        <div class="award-name">Benjamin Friedman Travel Award</div>
+        <div class="award-org">Omicron Delta Epsilon · ASSA Meeting</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2026</div>
+        <div class="award-name">Graduate Research Travel Grant</div>
+        <div class="award-org">Northern Illinois University · ASSA Meeting</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div class="award-name">Second Place, Graduate Research Competition</div>
+        <div class="award-org">Omicron Delta Epsilon</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2025</div>
+        <div class="award-name">Research Mentoring Award</div>
+        <div class="award-org">NIU Graduate School</div>
+      </div>
+      <div class="award-item">
+        <div class="award-year">2021–2026</div>
+        <div class="award-name">Graduate Teaching Assistantship (Full Scholarship)</div>
+        <div class="award-org">Department of Economics, NIU</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <div class="container">
+    <p class="section-label">Engagement</p>
+    <h2>Service &amp; Community</h2>
+    <div class="section-divider"></div>
+    <div class="service-cols">
+      <div class="service-section">
+        <h3>Professional Service</h3>
+        <div class="service-item"><strong>Referee</strong><span>Scientific African (Elsevier)</span></div>
+        <div class="service-item"><strong>Referee</strong><span>Emerging Markets Finance and Trade (Taylor &amp; Francis)</span></div>
+        <div class="service-item"><strong>Referee</strong><span>Energy Research Letters (APAEA)</span></div>
+        <div class="service-item"><strong>Certified Peer Reviewer</strong><span>Elsevier Researcher Academy</span></div>
+        <div class="service-item"><strong>Discussant</strong><span>ASSA 2026 Annual Meeting (ODE Session)</span></div>
+        <div class="service-item"><strong>Undergraduate Research Judge</strong><span>NIU CURE Conference, 2026</span></div>
+        <div class="service-item"><strong>Moderator</strong><span>Illinois Economic Association, 2021 Annual Meeting</span></div>
+        <div class="service-item"><strong>Co-Chair, Accreditation Taskforce</strong><span>Fountain University, Nigeria</span></div>
+      </div>
+      <div class="service-section">
+        <h3>Community Leadership</h3>
+        <div class="service-item">
+          <strong>Imam, Islamic Center of DeKalb, Illinois</strong>
+          <span>2021–2026 · Community leadership, public lectures, and coordination of youth educational programmes in partnership with local nonprofits</span>
+        </div>
+        <div class="service-item">
+          <strong>Member, Presidential Commission on Interfaith Affairs</strong>
+          <span>Northern Illinois University · 2025–2026 · Contributing to university-wide dialogue, inclusion, and community partnership initiatives</span>
+        </div>
+        <h3 style="margin-top:2rem;">Professional Affiliations</h3>
+        <div class="service-item"><strong>American Economic Association</strong><span>2022–Present</span></div>
+        <div class="service-item"><strong>Omicron Delta Epsilon</strong><span>2022–Present · Economics Honour Society</span></div>
+        <div class="service-item"><strong>Illinois Economic Association</strong><span>2025–Present</span></div>
+        <div class="service-item"><strong>African Finance and Economics Association</strong><span>2026</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2>Contact</h2>
+    <div class="section-divider"></div>
+    <div class="contact-layout">
+      <div class="contact-text">
+        <div style="margin-top:0rem;">
+          <a href="CV_Ogunsiji.pdf" download class="btn btn-primary" style="display:inline-flex;align-items:center;gap:0.6rem;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="contact-item">
+          <div class="ci-label">Email</div>
+          <div class="ci-val"><a href="mailto:murtadaogunsiji@gmail.com">murtadaogunsiji@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-label">Current Post</div>
+          <div class="ci-val">Lecturer, Department of Economics<br>Fountain University, Nigeria</div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-label">Ph.D. Inst.</div>
+          <div class="ci-val">Department of Economics<br>Northern Illinois University, USA</div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-label">ORCiD</div>
+          <div class="ci-val"><a href="https://orcid.org/0000-0002-6953-6159" target="_blank">0000-0002-6953-6159 ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 <strong>Dr. Muritala Olayemi Ogunsiji</strong> · Ph.D. Economics, Northern Illinois University</p>
+</footer>
+
+</body>
+</html>
