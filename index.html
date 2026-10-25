@@ -293,7 +293,7 @@
 
   /* ─── TEACHING ─── */
   #teaching { background: var(--white); }
-  .teaching-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .teaching-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .teaching-card {
     padding: 1.5rem;
     border: 1px solid var(--border);
@@ -307,8 +307,9 @@
     height: 3px;
   }
   .teaching-card:nth-child(1)::before { background: linear-gradient(90deg, var(--navy), var(--navy-mid)); }
-  .teaching-card:nth-child(2)::before { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
-  .teaching-card:nth-child(3)::before { background: linear-gradient(90deg, var(--teal), #26C6A0); }
+  .teaching-card:nth-child(2)::before { background: linear-gradient(90deg, var(--teal), #26C6A0); }
+  .teaching-card:nth-child(3)::before { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
+  .teaching-card:nth-child(4)::before { background: linear-gradient(90deg, var(--c4), #9333EA); }
   .tc-inst {
     font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--amber); margin-bottom: 0.4rem;
@@ -443,13 +444,13 @@
     <h1>Dr. Muritala<br>Ogunsiji</h1>
     <p class="hero-subtitle">Ph.D. in Economics, Northern Illinois University</p>
     <p class="hero-desc">
-      Researcher specialising in Public Finance and Urban Economics with expertise in spatial econometrics, panel data methods, and quantitative policy analysis.
+      Researcher specialising in Public, Health and Urban Economics with expertise in spatial econometrics, panel data methods, and quantitative policy analysis using causal inference methods.
     </p>
     <div class="hero-fields">
       <span class="field-tag">Public Finance</span>
-      <span class="field-tag">Applied Econometrics</span>
-      <span class="field-tag">Urban Economics</span>
       <span class="field-tag">Health Economics</span>
+      <span class="field-tag">Urban Economics</span>
+      <span class="field-tag">Applied Econometrics</span>
     </div>
     <div class="hero-cta">
       <a href="#research" class="btn btn-primary">View Research</a>
@@ -466,7 +467,7 @@
         <div class="stat-label">Peer-reviewed<br>Publications</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">4</div>
+        <div class="stat-num">5</div>
         <div class="stat-label">Working<br>Papers</div>
       </div>
       <div class="stat-item">
@@ -491,7 +492,7 @@
     <div class="section-divider"></div>
     <div class="about-grid">
       <div class="about-text">
-        <p>I am an economist specialising in <strong>Public Finance</strong>, <strong>Urban Economics</strong>, and <strong>Health Economics</strong>. My research uses modern applied econometric methods to evaluate the effects of public policies on crime and health outcomes. A central focus of my work is generating policy-relevant evidence through credible causal inference strategies. I completed all requirements for the Ph.D. in Economics at Northern Illinois University in May 2026, successfully defending my dissertation, <em>Three Essays in Public Finance and Urban Economics</em>.</p>
+        <p>I am an economist specialising in <strong>Public</strong>, <strong>Health</strong>, and <strong>Urban Economics</strong>. My research uses modern applied econometric methods to evaluate the effects of public policies on crime and health outcomes. A central focus of my work is generating policy-relevant evidence through credible causal inference strategies. I completed my Ph.D. in Economics at Northern Illinois University in August 2026, and I currently work as a lecturer at Fountain University, Osogbo, Nigeria.</p>
         <p>In addition to my research, I am a dedicated educator with extensive teaching experience across diverse educational settings in both Nigeria and the United States. My experience spans undergraduate instruction in economics as well as nearly a decade of secondary school teaching. These experiences have strengthened my ability to engage students with varying academic backgrounds, learning styles, and career aspirations. I strive to create an inclusive and intellectually stimulating learning environment that promotes critical thinking, analytical reasoning, and lifelong learning.</p>
         <p>Through my research and teaching, I seek to contribute to evidence-based policymaking, advance scholarly understanding of pressing socioeconomic issues, and help students develop the skills necessary to succeed in an increasingly data-driven world.</p>
         <p>Outside academia, I have been actively involved in Islamic education and community service, including teaching Qur'an and mentoring students in religious studies. These experiences have strengthened my commitment to education, mentorship, and lifelong learning.</p>
@@ -501,8 +502,7 @@
           <h4>Doctoral Qualification</h4>
           <p>Ph.D. Economics</p>
           <p>Northern Illinois University, USA</p>
-          <p style="margin-top:0.3rem;font-size:0.82rem;color:var(--muted);">Requirements completed: May 2026</p>
-          <p style="font-size:0.82rem;color:var(--muted);">Degree conferred: August 2026</p>
+          <p style="margin-top:0.3rem;font-size:0.82rem;color:var(--muted);">Degree conferred: August 2026</p>
         </div>
         <div class="info-block">
           <h4>Other Degrees</h4>
@@ -514,16 +514,17 @@
         <div class="info-block">
           <h4>Primary Fields</h4>
           <p>Public Finance</p>
+          <p>Health Economics</p>
           <p>Urban Economics</p>
         </div>
         <div class="info-block">
           <h4>Secondary Fields</h4>
           <p>Applied Econometrics</p>
-          <p>Health Economics</p>
         </div>
         <div class="info-block">
           <h4>Software</h4>
-          <p>R · Stata · Python · LaTeX</p>
+          <p>R (Advanced) · Stata (Advanced)</p>
+          <p>LaTeX · Python (Working knowledge)</p>
         </div>
         <div class="info-block">
           <h4>Contact</h4>
@@ -581,21 +582,33 @@
     </div>
 
     <div class="working-papers">
-      <h3>Working Papers &amp; Dissertation Chapters</h3>
+      <h3>Manuscript Under Review</h3>
       <div class="wp-item">
         <div class="wp-icon">◆</div>
         <div class="wp-title">Impact of Housing Choice Voucher on Crime: A Spatial Econometric Analysis
-          <br><span style="font-size:0.8rem;color:#6B7280;">Presented at ASSA 2026 Annual Meeting</span></div>
+          <br><span style="font-size:0.8rem;color:#6B7280;"><em>Applied Spatial Analysis and Policy</em></span></div>
       </div>
-      <div class="wp-item">
+
+      <h3 style="margin-top:2rem;">Research in Progress</h3>
+      <div class="wp-item" style="border-left-color:var(--c2);">
+        <div class="wp-icon">◆</div>
+        <div class="wp-title">Corporate Homeownership and Crime: Evidence from St. Louis County
+          <br><span style="font-size:0.8rem;color:#6B7280;">with Jeremy Groves · Presented at NIU ECONference 2026</span></div>
+      </div>
+      <div class="wp-item" style="border-left-color:var(--c3);">
+        <div class="wp-icon">◆</div>
+        <div class="wp-title">US Policy News and State-level Health Outcomes: Local versus National Policy News
+          <br><span style="font-size:0.8rem;color:#6B7280;">with Afees A. Salisu</span></div>
+      </div>
+      <div class="wp-item" style="border-left-color:var(--c4);">
         <div class="wp-icon">◆</div>
         <div class="wp-title">Heterogeneous Impact of Public Health Expenditure on Health Outcomes in Developing and Emerging Economies
           <br><span style="font-size:0.8rem;color:#6B7280;">Presented at IEA 2025 Annual Meeting</span></div>
       </div>
-      <div class="wp-item">
+      <div class="wp-item" style="border-left-color:var(--c5);">
         <div class="wp-icon">◆</div>
-        <div class="wp-title">Corporate Homeownership and Crime: Evidence from St. Louis County
-          <br><span style="font-size:0.8rem;color:#6B7280;">Presented at NIU ECONference 2026</span></div>
+        <div class="wp-title">Terrorism and Sectoral Economic Performance in Sub-Saharan Africa: The Role of ICT
+          <br><span style="font-size:0.8rem;color:#6B7280;">with Folorunsho M. Ajide</span></div>
       </div>
     </div>
   </div>
@@ -611,12 +624,12 @@
       <div class="teaching-card">
         <div class="tc-inst">Fountain University, Nigeria</div>
         <div class="tc-role">Lecturer</div>
-        <div class="tc-period">May 2020 – Present</div>
+        <div class="tc-period">Oct 2026 – Present</div>
         <ul class="course-list">
           <li>Introduction to Microeconomics</li>
-          <li>Introductory Econometrics (ECO 307 &amp; 308)</li>
-          <li>Public Sector Economics / Public Policy (ECO 315 &amp; 407)</li>
-          <li class="course-highlight">Islamic Finance (ECO 318)</li>
+          <li>Mathematics for Economists</li>
+          <li class="course-highlight">Introduction to Islamic Economics</li>
+          <li>Behavioural Economics</li>
         </ul>
       </div>
       <div class="teaching-card">
@@ -631,13 +644,23 @@
         </ul>
       </div>
       <div class="teaching-card">
+        <div class="tc-inst">Fountain University, Nigeria</div>
+        <div class="tc-role">Assistant Lecturer</div>
+        <div class="tc-period">May 2020 – 2021</div>
+        <ul class="course-list">
+          <li>Introduction to Microeconomics</li>
+          <li>Introductory Econometrics</li>
+          <li>Public Sector Economics</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
         <div class="tc-inst">Al-Hijrah College, Nigeria</div>
         <div class="tc-role">Learning Facilitator</div>
-        <div class="tc-period">2011 – 2020</div>
+        <div class="tc-period">2011–2013 &amp; 2015–2020</div>
         <ul class="course-list">
-          <li>Economics </li>
-          <li>Marketing</li>
           <li>Mathematics</li>
+          <li>Economics &amp; Social Studies (2011–2013)</li>
+          <li>Economics &amp; Marketing (2015–2020)</li>
         </ul>
         <p style="font-size:0.78rem;color:var(--teal);margin-top:0.75rem;">100% pass rate in WAEC/NECO examinations</p>
       </div>
@@ -748,6 +771,7 @@
         <div class="service-item"><strong>Undergraduate Research Judge</strong><span>NIU CURE Conference, 2026</span></div>
         <div class="service-item"><strong>Moderator</strong><span>Illinois Economic Association, 2021 Annual Meeting</span></div>
         <div class="service-item"><strong>Co-Chair, Accreditation Taskforce</strong><span>Fountain University, Nigeria</span></div>
+        <div class="service-item"><strong>Undergraduate Coordinator</strong><span>Department of Economics, Fountain University, Nigeria</span></div>
       </div>
       <div class="service-section">
         <h3>Community Leadership</h3>
